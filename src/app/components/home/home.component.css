@@ -1,0 +1,374 @@
+.detail{
+    display: flex; 
+    flex-direction: row;
+}
+
+.detail::before{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.detail img{
+    /* float: left; */
+    padding: 16px;
+    border: 1px solid rgba(69,88,128,.2);
+    border-radius: 16px;
+    max-width: 50%;
+    vertical-align: middle;
+    margin: 0 32px 32px 0;
+    object-fit: cover;
+}
+
+.detail div{
+    display: inline;
+    vertical-align: middle;
+}
+
+.detail div p{
+    margin-top: 10px;
+}
+
+.headContent2 strong{
+    position: relative;
+    display: inline-block;
+    padding: 3px 0 3px 12px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.headContent2 strong::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 4px;
+    background: orange;
+}
+
+.headContent2 h1{
+    font-size: 24px;
+    line-height: 30px;
+    color: #243141;
+    font-weight: 500;
+    display: block;
+    padding-top: 16px;
+}
+
+.hakkimizdaAciklama{
+    /* text-transform: lowercase; */
+    margin-top: 1rem;
+}
+
+
+/* .wrapper{
+} */
+
+#card-area{
+    padding: 0 10%;
+    margin-bottom: 50px;
+}
+.box-area{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 40px;
+}
+.box {
+    width: 100%; /* Kutunun genişliğini %100 yaparak esnek bırakıyoruz */
+    height: 559px; /* Sabit bir yükseklik belirliyoruz */
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmi düzgün bir şekilde sığdırıyoruz */
+    object-position: center; /* Resmin ortada kalmasını sağlıyoruz */
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.overlay {
+	width: 100%;
+	height: 0;
+	background: linear-gradient(transparent,#1c1c1c 58%);
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	font-size: 14px;
+	transition: height 0.5s;
+}
+.overlay h3 {
+	font-weight: 500;
+	margin-bottom: 5px;
+	margin-top: 80%;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 30px;
+	letter-spacing: 2px;
+    color: var(--white);
+}
+.overlay a {
+	margin-top: 10px;
+	color: #262626;
+	text-decoration: none;
+	font-size: 14px;
+	background: #fff;
+	border-radius: 50px;
+	text-align: center;
+	padding: 5px 15px;
+
+}
+
+.overlay p{
+    color: var(--white);
+}
+.box:hover img{
+    transform: scale(1.1);
+}
+.box:hover .overlay{
+    height: 100%;
+}
+
+
+.cards {
+    display: flex;
+    max-width: 900px;
+    width: calc(100% - 100px);
+    height: 400px;
+}
+
+.cards .card .info div{
+    color: yellow;
+}
+
+.cards .card .info .title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.cards .card .label .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    height: 40px;
+    background-color: white;
+    color: var(--color);
+    border-radius: 50%;
+}
+
+.cards .card .label .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    white-space: pre;
+    transition: 1s var(--cb);
+}
+
+.cards .card {
+    position: relative;
+    min-width: 60px;
+    background: var(--bg);
+    overflow: hidden;
+    margin: 5px;
+    background-size: auto 150% !important;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s var(--cb);
+    border-radius: 30px;
+}
+
+.cards .card .label {
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 40px;
+    transition: 0.5s var(--cb);
+}
+
+.cards .card.active .label {
+    bottom: 20px;
+    left: 20px;
+}
+
+.cards .card.active {
+    flex-grow: 10000;
+    background-size: auto 100%;
+}
+
+.cards .card:not(.active) .label {
+    bottom: 10px;
+    left: 10px;
+}
+
+.cards .card .shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(0, #0004, transparent);
+}
+
+.cards .card.active .info {
+    opacity: 1;
+}
+
+.cards .card:not(.active) .info {
+    opacity: 0;
+}
+
+swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+swiper-container {
+    width: 100%;
+    height: 300px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.mySwiper {
+    height: 400px !important;
+    width: 100%;
+}
+
+.mySwiper2 {
+    height: 150px !important;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.mySwiper2 swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.mySwiper2 .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+swiper-slide img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover;
+    object-position: center; */
+}
+
+.swiper{
+    max-width: 900px;
+    max-height: 600px;
+}
+
+
+
+@media (max-width: 768px) {
+    .detail{
+        flex-direction: column;
+    }
+
+    .detail img{
+        max-width: 100%;
+    }
+
+    .row{
+        flex-direction: column !important;
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 7rem;
+}
+
+.info{
+    width: 100%;
+}
+
+.info .headContent2 h3,
+.info .headContent2 p{
+    margin-top: 1rem;
+}
+
+.info ul{
+    margin-top: 32px;
+    border: 1px solid rgba(69, 88, 128, .2);
+    border-radius: 16px;
+}
+
+.info ul li{
+    display: table;
+    width: 100%;
+}
+
+.info ul li:first-child>span{
+    border-top: none;
+}
+
+.info ul li>span:first-child{
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 10px 10px 30px;
+    color: #243141;
+}
+
+.info ul li>span:last-child{
+    text-align: right;
+    padding: 16px 24px 16px 16px;
+}
+
+.info ul li>span{
+    display: table-cell;
+    vertical-align: middle;
+    border-top: 1px solid rgba(69, 88, 128, .2);
+}
+
+.info ul li span i{
+    font-size: 20px;
+}
+
+/* .info ul li span .ri-calendar-2-line::before{
+    content: "\e918";
+} */

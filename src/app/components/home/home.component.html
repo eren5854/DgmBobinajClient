@@ -1,0 +1,393 @@
+<!-- Hakkımızda -->
+<section class="section__container about__container" id="about">
+
+    <div class="detail">
+        <img src="/assets/img/img-2.jpg" alt="">
+        <div>
+            <div class="headContent2">
+                <strong>Hakkımızda</strong>
+                <h1>Dgm Bobinaj</h1>
+            </div>
+            <div class="hakkimizdaAciklama">
+                Sakarya Söğütlü motor sarım işleri, el aletleri tamir onarımı, kaynak makineleri tamiri, jeneratör tamir
+                onarımı, el makineleri bakım hizmetleri verilmektedir. Su kuyularından rahat bir şekilde yararlanmak
+                için kullanılan motorların arızaları, alternatif elektrik kaynağı olan jeneratör ve daha birçok el
+                makineleri gibi elektrik enerjisi ile çalışan cihazların her türlü bakım ve onarımlarını, gerekli
+                tamiratlarını yapan firmamız Sakarya geneline hizmet sağlamaktadır.
+            </div>
+            <p>Dgm Bobinaj, 09:00 - 18:00 saatleri arasında hizmet vermektedir.</p>
+            <p>Dgm Bobinaj Sakarya ilinde, Söğütlü ilçesinde, adresinde hizmet vermektedir.</p>
+            <p>Söğütlü Elektrik pano kurulumu,Söğütlü Elektrik tesisat kurulumu,Söğütlü Beyaz eşya tamiri,Söğütlü
+                Elektrik tesisat kurulumu,Söğütlü Otomasyon sistemleri,Söğütlü Beyaz eşya tamiri gibi hizmetleri
+                sunmaktadır.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- Hizmetler -->
+<section class="section__container" id="services">
+    <div style="margin-top: -70px;" class="about__header">
+        <div class="headContent2">
+            <strong class="">Hizmetlerimiz</strong>
+        </div>
+    </div>
+
+    <div id="card-area">
+        <div class="wrapper">
+            <div class="box-area">
+                <div [ngClass]="{'reveal-left-1': !isScreenSizeUnder768px,
+          'reveal-scale-1': isScreenSizeUnder768px}" class="box">
+                    <img alt="" src="/assets/img/article-1.jpg">
+                    <div class="overlay">
+                        <h3>Bobinaj</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam.
+                            Quod.</p><a href="#">Book Now</a>
+                    </div>
+                </div>
+                <div [ngClass]="{'reveal-bottom-1': !isScreenSizeUnder768px, 'reveal-scale-1': isScreenSizeUnder768px}"
+                    class="box">
+                    <img alt="" src="/assets/img/article-2.jpg">
+                    <div class="overlay">
+                        <h3>Montaj</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam.
+                            Quod.</p><a href="#">Book Now</a>
+                    </div>
+                </div>
+                <div [ngClass]="{'reveal-right-1': !isScreenSizeUnder768px, 'reveal-scale-1': isScreenSizeUnder768px}"
+                    class="box ">
+                    <img alt="" src="/assets/img/article-3.jpg">
+                    <div class="overlay">
+                        <h3>Tamirat</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam.
+                            Quod.</p><a href="#">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Süreç Yönetimi -->
+<section class="section__container" id="process">
+    <div style="margin-top: -70px;" class="about__header">
+        <div class="headContent2">
+            <strong class="">Süreç Yönetimi</strong>
+        </div>
+    </div>
+
+    <div class="card-area items" style="display: flex; justify-content: center;">
+
+        <div class="cards">
+
+            <!-- İlk Kart -->
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 0}" (click)="selectCard(0)"
+                style="--bg: url(/assets/img/about-1.jpg)">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: green">
+                        <img style="width: 28px;" src="/assets/img/warning-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Arıza Tespiti</div>
+                        <div>Nature Looks Attractive</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İkinci Kart -->
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 1}" (click)="selectCard(1)"
+                style="--bg: url(/assets/img/about-2.jpg)">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: blue">
+                        <img style="width: 28px;" src="/assets/img/tool2-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Sökme</div>
+                        <div>Summer is a State of Mind</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Üçüncü Kart -->
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 2}" (click)="selectCard(2)"
+                style="--bg: url(/assets/img/about-3.jpg)">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: orange">
+                        <img style="width: 28px;" src="/assets/img/repair-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Arıza Giderme</div>
+                        <div>Life Starts All Over Again</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dördüncü Kart -->
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 3}" (click)="selectCard(3)"
+                style="--bg: url(/assets/img/article-2.jpg)">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: black">
+                        <img style="width: 28px;" src="/assets/img/collect-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Toplama</div>
+                        <div>Not a Season, It's Celebration</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beşinci Kart -->
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 4}" (click)="selectCard(4)"
+                style="--bg: url(/assets/img/article-3.jpg)">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: black">
+                        <img style="width: 28px;" src="/assets/img/check-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Test</div>
+                        <div>Not a Season, It's Celebration</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Galeri -->
+<section class="section__container" id="gallery">
+    <div style="margin-top: -70px; display: flex; justify-content: center;" class="about__header">
+        <div class="headContent2">
+            <strong class="">Resim Galerisi</strong>
+        </div>
+    </div>
+    <!-- Slider main container -->
+    <div class="swiper">
+        <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper"
+            thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true" mousewheel="false"
+            autoplay-delay="3500" autoplay-disable-on-interaction="false">
+            <swiper-slide>
+                <img src="https://i.pinimg.com/736x/94/8b/5d/948b5d9a67b80237b231517d79df7fb0.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img
+                    src="https://c4.wallpaperflare.com/wallpaper/863/684/864/sea-beach-islands-landscape-wallpaper-preview.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://w0.peakpx.com/wallpaper/983/660/HD-wallpaper-superyacht-super-yacht-boats.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+            </swiper-slide>
+        </swiper-container>
+
+        <swiper-container class="mySwiper2" loop="true" space-between="10" slides-per-view="4" free-mode="true"
+            watch-slides-progress="true">
+            <swiper-slide>
+                <img src="https://i.pinimg.com/736x/94/8b/5d/948b5d9a67b80237b231517d79df7fb0.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img
+                    src="https://c4.wallpaperflare.com/wallpaper/863/684/864/sea-beach-islands-landscape-wallpaper-preview.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://w0.peakpx.com/wallpaper/983/660/HD-wallpaper-superyacht-super-yacht-boats.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+            </swiper-slide>
+        </swiper-container>
+    </div>
+
+</section>
+
+<!-- Yorumlar -->
+<section class="section__container client__container" id="client">
+
+    <h3 class="section__subheader">Müşteri Yorumları</h3>
+    <h2 class="section__header">Dgm Bobinaj Hizmeti Alan Müşteriler</h2>
+
+    <!-- <div style="margin-top: -70px;" class="about__header">
+        <div>
+            <h3 class="section__subheader">Referances</h3>
+        </div>
+    </div> -->
+    <div class="swiper">
+        <swiper-container loop="true" speed="800" pagination="true" pagination-dynamic-bullets="true"
+            pagination-clickable="true" mousewheel="false" autoplay-delay="2500"
+            autoplay-disable-on-interaction="false">
+            <swiper-slide>
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <span><i class="ri-double-quotes-l"></i></span>
+                        <p>
+                            Choosing Secttre was the best decision for our operations. Their
+                            range of industrial products is unmatched, and the quality is
+                            exceptional. The team's dedication to customer satisfaction sets
+                            them apart. We're grateful for a reliable partner in our growth.
+                        </p>
+                        <div class="client__details">
+                            <img src="assets/img/client-1.jpg" alt="client" />
+                            <div>
+                                <h4>Sarah Martinez</h4>
+                                <h5>Operations Director</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <span><i class="ri-double-quotes-l"></i></span>
+                        <p>
+                            Working with Secttre has been a game-changer for our
+                            manufacturing process. Their innovative solutions have
+                            significantly improved our efficiency, and the level of support
+                            we received was outstanding. I highly recommend them to anyone
+                            seeking top-notch industrial products.
+                        </p>
+                        <div class="client__details">
+                            <img src="assets/img/client-2.jpg" alt="client" />
+                            <div>
+                                <h4>John Anderson</h4>
+                                <h5>Manufacturing Manager</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <span><i class="ri-double-quotes-l"></i></span>
+                        <p>
+                            As a maintenance supervisor, I rely on durable and efficient
+                            equipment. Secttre delivers on both fronts. The support team is
+                            responsive, and their products have greatly reduced downtime.
+                            I'm impressed and satisfied with their commitment to excellence.
+                        </p>
+                        <div class="client__details">
+                            <img src="assets/img/client-3.jpg" alt="client" />
+                            <div>
+                                <h4>Emily Turner</h4>
+                                <h5>Maintenance Supervisor</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </swiper-slide>
+        </swiper-container>
+    </div>
+</section>
+
+<section class="section__container about__container" id="info">
+    <div class="row">
+        <div class="info">
+            <div class="headContent2">
+                <strong>Çalışma Saatleri</strong>
+                <h3>Dgm Bobinaj</h3>
+                <p>Firmamızın Çalışma Saatleri</p>
+            </div>
+            <ul>
+                <li>
+                    <span><i class="ri-calendar-2-line"></i> Pazartesi</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span><i class="ri-calendar-2-line"></i> Salı</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span><i class="ri-calendar-2-line"></i> Çarşamba</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span><i class="ri-calendar-2-line"></i> Perşembe</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span><i class="ri-calendar-2-line"></i> Cuma</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span><i class="ri-calendar-2-line"></i> Cumartesi</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span><i class="ri-calendar-2-line"></i> Pazar</span>
+                    <span></span>
+                </li>
+            </ul>
+        </div>
+        <div class="info">
+            <div class="headContent2">
+                <strong>İletişim Bilgileri</strong>
+                <h3>Dgm Bobinaj</h3>
+                <p>Firmamızın İletişim Bilgileri</p>
+            </div>
+            <ul>
+                <li>
+                    <span><i class="ri-user-line"></i> Yetkili Kişi</span>
+                    <span>
+                        <strong>Soner Düğmeoğlu</strong>
+                    </span>
+                </li>
+                <li>
+                    <span><i class="ri-phone-line"></i> Telefon</span>
+                    <span><a href="">0555 555 55 55</a></span>
+                </li>
+                <li>
+                    <span><i class="ri-map-pin-line"></i> Adres</span>
+                    <span>Ferizli/Sakarya</span>
+                </li>
+                <li>
+                    <span><i class="ri-mail-line"></i> E-Mail</span>
+                    <span>info&#64;dgmbobinaj.com</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

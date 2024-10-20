@@ -1,0 +1,30 @@
+.footer__bar{
+    color: #fff;
+    background: #0e151d;
+}
+
+.footer__links a{
+    color: #fff;
+    opacity: .5;
+}
+
+.footer__col h4{
+    color: #fff;
+    opacity: .7;
+}
+
+.footer__container{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+@media (max-width: 500px){
+    .header__container p{
+        font-size: 12px;
+    }
+
+    .header__container h1{
+        font-size: 25px;
+        line-height: 2rem;
+    }
+}
