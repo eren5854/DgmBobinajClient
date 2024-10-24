@@ -1,0 +1,34 @@
+<section class="section__container">
+    <div class="contactForm">
+        <div>
+            <div class="headContent2 tcenter">
+                <strong>Düşünceleriniz Bizim İçin Değerli</strong>
+                <!-- <h5>Dgm Bobinaj</h5> -->
+                <p>Aşağıdaki yorum formunu doldurarak aldığınız hizmeti değerlendire bilirisiniz.</p>
+            </div>
+
+            <div class="row" id="contactForm">
+                <div class="col-sm-6">
+                    <input [(ngModel)]="commentModel.commentName" required name="name" id="name" type="text"
+                        placeholder="Ad Soyad">
+                </div>
+                <div class="col-sm-6">
+                    <select [(ngModel)]="commentModel.rate" required name="rate" id="rate" >
+                        <option value="" disabled selected>Puan</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                
+                <div class="col-12">
+                    <textarea [(ngModel)]="commentModel.commentText" required name="content" id="content" rows="5"
+                        placeholder="Mesajınız.."></textarea>
+                    <button class="btn" type="submit" (click)="updateComment()" id="mesajgonder">Yorumu Gönder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

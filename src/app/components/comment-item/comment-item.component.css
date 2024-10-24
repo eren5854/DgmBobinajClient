@@ -1,0 +1,59 @@
+.contactForm {
+    display: flex;
+    justify-content: center;
+}
+
+.tcenter {
+    text-align: center;
+}
+
+.contactForm .tcenter h5 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 500;
+    padding-top: 16px;
+}
+
+.contactForm .tcenter p {
+    padding-top: 16px;
+}
+
+.contactForm>div>.row {
+    padding-top: 12px;
+    max-width: 830px;
+}
+
+.contactForm>div>.row>div {
+    padding-top: 24px 16px 0;
+    text-align: center;
+}
+
+input[type=text],
+input[type=number],
+textarea {
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 17px 16px;
+    resize: none;
+    appearance: none;
+    border: 1px solid rgba(134, 143, 151, .15);
+    transition-duration: .3s;
+    transition-timing-function: ease-in;
+    margin-bottom: 1rem;
+}
+
+select{
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 17px 16px;
+    resize: none;
+    /* appearance: none; */
+    border: 1px solid rgba(134, 143, 151, .15);
+    transition-duration: .3s;
+    transition-timing-function: ease-in;
+    margin-bottom: 1rem;
+}

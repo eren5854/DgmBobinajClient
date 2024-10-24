@@ -8,6 +8,12 @@
     opacity: .5;
 }
 
+.footer__links a:hover{
+    color: var(--primary-color);
+    opacity: 1;
+    text-decoration: none;
+}
+
 .footer__col h4{
     color: #fff;
     opacity: .7;

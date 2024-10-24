@@ -2,25 +2,36 @@
 <section class="section__container about__container" id="about">
 
     <div class="detail">
-        <img src="/assets/img/img-2.jpg" alt="">
+        <img src="{{imgUrl}}{{about.image}}" alt="">
+        <div>
+            <div class="headContent2">
+                <strong>Hakkımızda</strong>
+                <h1>{{about.title}}</h1>
+            </div>
+            <p [innerHtml]="about.text" class="hakkimizdaAciklama">
+
+            </p>
+        </div>
+
+        <!-- <img src="/assets/img/img-2.jpg" alt="">
         <div>
             <div class="headContent2">
                 <strong>Hakkımızda</strong>
                 <h1>Dgm Bobinaj</h1>
             </div>
-            <div class="hakkimizdaAciklama">
-                Sakarya Söğütlü motor sarım işleri, el aletleri tamir onarımı, kaynak makineleri tamiri, jeneratör tamir
+            <p class="hakkimizdaAciklama">
+                Sakarya Ferizli motor sarım işleri, el aletleri tamir onarımı, kaynak makineleri tamiri, jeneratör tamir
                 onarımı, el makineleri bakım hizmetleri verilmektedir. Su kuyularından rahat bir şekilde yararlanmak
                 için kullanılan motorların arızaları, alternatif elektrik kaynağı olan jeneratör ve daha birçok el
                 makineleri gibi elektrik enerjisi ile çalışan cihazların her türlü bakım ve onarımlarını, gerekli
                 tamiratlarını yapan firmamız Sakarya geneline hizmet sağlamaktadır.
-            </div>
-            <p>Dgm Bobinaj, 09:00 - 18:00 saatleri arasında hizmet vermektedir.</p>
-            <p>Dgm Bobinaj Sakarya ilinde, Söğütlü ilçesinde, adresinde hizmet vermektedir.</p>
-            <p>Söğütlü Elektrik pano kurulumu,Söğütlü Elektrik tesisat kurulumu,Söğütlü Beyaz eşya tamiri,Söğütlü
-                Elektrik tesisat kurulumu,Söğütlü Otomasyon sistemleri,Söğütlü Beyaz eşya tamiri gibi hizmetleri
+            </p>
+            <p class="hakkimizdaAciklama">Dgm Bobinaj, 09:00 - 18:00 saatleri arasında hizmet vermektedir.</p>
+            <p class="hakkimizdaAciklama">Dgm Bobinaj Sakarya ilinde, Ferizli ilçesinde, adresinde hizmet vermektedir.</p>
+            <p class="hakkimizdaAciklama">Ferizli Elektrik pano kurulumu,Ferizli Elektrik tesisat kurulumu,Ferizli Beyaz eşya tamiri,Ferizli
+                Elektrik tesisat kurulumu,Ferizli Otomasyon sistemleri,Ferizli Beyaz eşya tamiri gibi hizmetleri
                 sunmaktadır.</p>
-        </div>
+        </div> -->
     </div>
 
 </section>
@@ -36,8 +47,16 @@
     <div id="card-area">
         <div class="wrapper">
             <div class="box-area">
-                <div [ngClass]="{'reveal-left-1': !isScreenSizeUnder768px,
-          'reveal-scale-1': isScreenSizeUnder768px}" class="box">
+                @for (service of services; track service) {
+                <div class="box">
+                    <img alt="" src="{{imgUrl}}{{service.image}}">
+                    <div class="overlay">
+                        <h3>{{service.title}}</h3>
+                        <p>{{service.text}}</p>
+                    </div>
+                </div>
+                }
+                <!-- <div class="box">
                     <img alt="" src="/assets/img/article-1.jpg">
                     <div class="overlay">
                         <h3>Bobinaj</h3>
@@ -45,7 +64,7 @@
                             Quod.</p><a href="#">Book Now</a>
                     </div>
                 </div>
-                <div [ngClass]="{'reveal-bottom-1': !isScreenSizeUnder768px, 'reveal-scale-1': isScreenSizeUnder768px}"
+                <div
                     class="box">
                     <img alt="" src="/assets/img/article-2.jpg">
                     <div class="overlay">
@@ -54,7 +73,7 @@
                             Quod.</p><a href="#">Book Now</a>
                     </div>
                 </div>
-                <div [ngClass]="{'reveal-right-1': !isScreenSizeUnder768px, 'reveal-scale-1': isScreenSizeUnder768px}"
+                <div
                     class="box ">
                     <img alt="" src="/assets/img/article-3.jpg">
                     <div class="overlay">
@@ -62,7 +81,7 @@
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam.
                             Quod.</p><a href="#">Book Now</a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -76,11 +95,10 @@
         </div>
     </div>
 
-    <div class="card-area items" style="display: flex; justify-content: center;">
+    <!-- <div *ngIf="!isScreenSizeUnder768px" class="card-area items" style="display: flex; justify-content: center;">
 
         <div class="cards">
 
-            <!-- İlk Kart -->
             <div class="card" [ngClass]="{'active': selectedCardIndex === 0}" (click)="selectCard(0)"
                 style="--bg: url(/assets/img/about-1.jpg)">
                 <div class="shadow"></div>
@@ -95,7 +113,6 @@
                 </div>
             </div>
 
-            <!-- İkinci Kart -->
             <div class="card" [ngClass]="{'active': selectedCardIndex === 1}" (click)="selectCard(1)"
                 style="--bg: url(/assets/img/about-2.jpg)">
                 <div class="shadow"></div>
@@ -110,7 +127,6 @@
                 </div>
             </div>
 
-            <!-- Üçüncü Kart -->
             <div class="card" [ngClass]="{'active': selectedCardIndex === 2}" (click)="selectCard(2)"
                 style="--bg: url(/assets/img/about-3.jpg)">
                 <div class="shadow"></div>
@@ -125,7 +141,6 @@
                 </div>
             </div>
 
-            <!-- Dördüncü Kart -->
             <div class="card" [ngClass]="{'active': selectedCardIndex === 3}" (click)="selectCard(3)"
                 style="--bg: url(/assets/img/article-2.jpg)">
                 <div class="shadow"></div>
@@ -140,7 +155,6 @@
                 </div>
             </div>
 
-            <!-- Beşinci Kart -->
             <div class="card" [ngClass]="{'active': selectedCardIndex === 4}" (click)="selectCard(4)"
                 style="--bg: url(/assets/img/article-3.jpg)">
                 <div class="shadow"></div>
@@ -156,91 +170,172 @@
             </div>
 
         </div>
-    </div>
-</section>
+    </div> -->
+
+    <div class="card-area items" style="display: flex; justify-content: center;">
+
+        <div class="cards">
+            <!-- @for (operation of operations; track operation) {
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 0}" (click)="selectCard(0)"
+                style="--bg: url({{imgUrl}}{{operation.image}})">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: green">
+                        <img style="width: 28px;" src="/assets/img/warning-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Arıza Tespiti</div>
+                        <div>Nature Looks Attractive</div>
+                    </div>
+                </div>
+            </div>
+            } -->
+
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 0}" (click)="selectCard(0)"
+                style="--bg: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.05)), url({{imgUrl}}{{operationModel0.image}})">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: green">
+                        <img style="width: 28px;" src="/assets/img/warning-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">{{operationModel0.title}}</div>
+                        <div>
+                            <p>{{operationModel0.text}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 1}" (click)="selectCard(1)"
+                style="--bg: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.05)), url({{imgUrl}}{{operationModel1.image}})">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: blue">
+                        <img style="width: 28px;" src="/assets/img/tool2-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">{{operationModel1.title}}</div>
+                        <div>{{operationModel1.text}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 2}" (click)="selectCard(2)"
+                style="--bg: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.05)), url({{imgUrl}}{{operationModel2.image}})">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: orange">
+                        <img style="width: 28px;" src="/assets/img/repair-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">{{operationModel2.title}}</div>
+                        <div>{{operationModel2.text}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 3}" (click)="selectCard(3)"
+                style="--bg: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.05)), url({{imgUrl}}{{operationModel3.image}})">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: black">
+                        <img style="width: 28px;" src="/assets/img/collect-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">{{operationModel3.title}}</div>
+                        <div>{{operationModel3.text}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 4}" (click)="selectCard(4)"
+                style="--bg: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.05)), url({{imgUrl}}{{operationModel4.image}})">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: black">
+                        <img style="width: 28px;" src="/assets/img/check-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">{{operationModel4.title}}</div>
+                        <div>{{operationModel4.text}}</div>
+                    </div>
+                </div>
+            </div>
 
 
-<!-- Galeri -->
-<section class="section__container" id="gallery">
-    <div style="margin-top: -70px; display: flex; justify-content: center;" class="about__header">
-        <div class="headContent2">
-            <strong class="">Resim Galerisi</strong>
+            <!-- <div class="card" [ngClass]="{'active': selectedCardIndex === 0}" (click)="selectCard(0)"
+                style="--bg: url(/assets/img/about-1.jpg)">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: green">
+                        <img style="width: 28px;" src="/assets/img/warning-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Arıza Tespiti</div>
+                        <div>Nature Looks Attractive</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 1}" (click)="selectCard(1)"
+                style="--bg: url(/assets/img/about-2.jpg)">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: blue">
+                        <img style="width: 28px;" src="/assets/img/tool2-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Sökme</div>
+                        <div>Summer is a State of Mind</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 2}" (click)="selectCard(2)"
+                style="--bg: url(/assets/img/about-3.jpg)">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: orange">
+                        <img style="width: 28px;" src="/assets/img/repair-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Arıza Giderme</div>
+                        <div>Life Starts All Over Again</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 3}" (click)="selectCard(3)"
+                style="--bg: url(/assets/img/article-2.jpg)">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: black">
+                        <img style="width: 28px;" src="/assets/img/collect-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Toplama</div>
+                        <div>Not a Season, It's Celebration</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" [ngClass]="{'active': selectedCardIndex === 4}" (click)="selectCard(4)"
+                style="--bg: url(/assets/img/article-3.jpg)">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon" style="--color: black">
+                        <img style="width: 28px;" src="/assets/img/check-32.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="title">Test</div>
+                        <div>Not a Season, It's Celebration</div>
+                    </div>
+                </div>
+            </div> -->
+
         </div>
     </div>
-    <!-- Slider main container -->
-    <div class="swiper">
-        <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper"
-            thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true" mousewheel="false"
-            autoplay-delay="3500" autoplay-disable-on-interaction="false">
-            <swiper-slide>
-                <img src="https://i.pinimg.com/736x/94/8b/5d/948b5d9a67b80237b231517d79df7fb0.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img
-                    src="https://c4.wallpaperflare.com/wallpaper/863/684/864/sea-beach-islands-landscape-wallpaper-preview.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://w0.peakpx.com/wallpaper/983/660/HD-wallpaper-superyacht-super-yacht-boats.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-            </swiper-slide>
-        </swiper-container>
-
-        <swiper-container class="mySwiper2" loop="true" space-between="10" slides-per-view="4" free-mode="true"
-            watch-slides-progress="true">
-            <swiper-slide>
-                <img src="https://i.pinimg.com/736x/94/8b/5d/948b5d9a67b80237b231517d79df7fb0.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img
-                    src="https://c4.wallpaperflare.com/wallpaper/863/684/864/sea-beach-islands-landscape-wallpaper-preview.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://w0.peakpx.com/wallpaper/983/660/HD-wallpaper-superyacht-super-yacht-boats.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-            </swiper-slide>
-        </swiper-container>
-    </div>
-
 </section>
 
 <!-- Yorumlar -->
@@ -248,37 +343,32 @@
 
     <h3 class="section__subheader">Müşteri Yorumları</h3>
     <h2 class="section__header">Dgm Bobinaj Hizmeti Alan Müşteriler</h2>
-
-    <!-- <div style="margin-top: -70px;" class="about__header">
-        <div>
-            <h3 class="section__subheader">Referances</h3>
-        </div>
-    </div> -->
     <div class="swiper">
-        <swiper-container loop="true" speed="800" pagination="true" pagination-dynamic-bullets="true"
-            pagination-clickable="true" mousewheel="false" autoplay-delay="2500"
+        <swiper-container loop="false" speed="3500" pagination="true" pagination-dynamic-bullets="true"
+            pagination-clickable="true" mousewheel="false" autoplay-delay="8000"
             autoplay-disable-on-interaction="false">
-            <swiper-slide>
+            <swiper-slide *ngFor="let comment of comments">
                 <div class="swiper-slide">
                     <div class="client__card">
-                        <span><i class="ri-double-quotes-l"></i></span>
+                        <span>
+                            <i *ngFor="let star of [].constructor(5); let i = index"
+                                [ngClass]="{'ri-star-fill': i < comment.rate!, 'ri-star-line': i >= comment.rate!}">
+                            </i>
+                        </span>
                         <p>
-                            Choosing Secttre was the best decision for our operations. Their
-                            range of industrial products is unmatched, and the quality is
-                            exceptional. The team's dedication to customer satisfaction sets
-                            them apart. We're grateful for a reliable partner in our growth.
+                            {{comment.commentText}}
                         </p>
                         <div class="client__details">
-                            <img src="assets/img/client-1.jpg" alt="client" />
+                            <img src="assets/img/user.png" alt="client" />
                             <div>
-                                <h4>Sarah Martinez</h4>
-                                <h5>Operations Director</h5>
+                                <h4>{{comment.commentName}}</h4>
+                                <h5>Müşteri</h5>
                             </div>
                         </div>
                     </div>
                 </div>
             </swiper-slide>
-            <swiper-slide>
+            <!-- <swiper-slide>
                 <div class="swiper-slide">
                     <div class="client__card">
                         <span><i class="ri-double-quotes-l"></i></span>
@@ -318,76 +408,240 @@
                         </div>
                     </div>
                 </div>
-            </swiper-slide>
+            </swiper-slide> -->
         </swiper-container>
     </div>
 </section>
 
-<section class="section__container about__container" id="info">
-    <div class="row">
+<!-- Referanslar -->
+<section class="section__container client__container" id="client">
+    <div style="margin-top: -70px; display: flex; justify-content: center;" class="about__header">
+        <div class="headContent2">
+            <strong>Referans Firmalar</strong>
+        </div>
+    </div>
+
+    <div
+        style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 6rem; align-items: center; justify-content: center;">
+        @for (referance of referances; track referance) {
+        <div>
+            <img class="referance-img" src="{{imgUrl}}{{referance.image}}" alt="">
+        </div>
+        }
+    </div>
+    <!-- Slider main container -->
+    <!-- <div class="swiper" style="max-width: 350px;">
+        <swiper-container loop="true" speed="800"
+             mousewheel="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+
+            @for (referance of referances; track referance) {
+                <swiper-slide>
+                    <div class="client__card">
+                        <img class="referance-img" src="{{imgUrl}}{{referance.image}}"alt="">
+                    </div>
+                </swiper-slide>
+            }
+        </swiper-container>
+    </div> -->
+</section>
+
+<!-- Galeri -->
+<section class="section__container" id="gallery">
+    <div style="margin-top: -70px; display: flex; justify-content: center;" class="about__header">
+        <div class="headContent2">
+            <strong class="">Resim Galerisi</strong>
+        </div>
+    </div>
+    <div class="swiper">
+        <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper"
+            thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true" mousewheel="false"
+            autoplay-delay="8500" speed="3500" autoplay-disable-on-interaction="false">
+            @for (gallery of galleries; track gallery) {
+            <swiper-slide>
+                <img src="{{imgUrl}}{{gallery.image}}" />
+            </swiper-slide>
+            }
+            <!-- <swiper-slide>
+                <img src="https://i.pinimg.com/736x/94/8b/5d/948b5d9a67b80237b231517d79df7fb0.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img
+                    src="https://c4.wallpaperflare.com/wallpaper/863/684/864/sea-beach-islands-landscape-wallpaper-preview.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://w0.peakpx.com/wallpaper/983/660/HD-wallpaper-superyacht-super-yacht-boats.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+            </swiper-slide>
+
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+            </swiper-slide> -->
+        </swiper-container>
+
+        <!-- <swiper-container class="mySwiper2" loop="true" space-between="10" slides-per-view="3" free-mode="true"
+            watch-slides-progress="true">
+
+            @for (gallery of galleries; track gallery) {
+            <swiper-slide>
+                <img src="{{imgUrl}}{{gallery.image}}" />
+            </swiper-slide>
+            }
+
+            <swiper-slide>
+                <img src="https://i.pinimg.com/736x/94/8b/5d/948b5d9a67b80237b231517d79df7fb0.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img
+                    src="https://c4.wallpaperflare.com/wallpaper/863/684/864/sea-beach-islands-landscape-wallpaper-preview.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://w0.peakpx.com/wallpaper/983/660/HD-wallpaper-superyacht-super-yacht-boats.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+            </swiper-slide>
+
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+            </swiper-slide>
+        </swiper-container> -->
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: center;"><a routerLink="gallery"><button class="btn">Tümünü Gör</button></a></div>
+    
+</section>
+
+<!-- Info -->
+<section class="section__container " id="info">
+    <div class="mainInfo">
         <div class="info">
             <div class="headContent2">
                 <strong>Çalışma Saatleri</strong>
-                <h3>Dgm Bobinaj</h3>
-                <p>Firmamızın Çalışma Saatleri</p>
+                <!-- <h3>Dgm Bobinaj</h3> -->
+                <p>Firmamızın Çalışma Günleri ve Saatleri</p>
             </div>
             <ul>
-                <li>
-                    <span><i class="ri-calendar-2-line"></i> Pazartesi</span>
-                    <span></span>
-                </li>
-                <li>
-                    <span><i class="ri-calendar-2-line"></i> Salı</span>
-                    <span></span>
-                </li>
-                <li>
-                    <span><i class="ri-calendar-2-line"></i> Çarşamba</span>
-                    <span></span>
-                </li>
-                <li>
-                    <span><i class="ri-calendar-2-line"></i> Perşembe</span>
-                    <span></span>
-                </li>
-                <li>
-                    <span><i class="ri-calendar-2-line"></i> Cuma</span>
-                    <span></span>
-                </li>
-                <li>
-                    <span><i class="ri-calendar-2-line"></i> Cumartesi</span>
-                    <span></span>
-                </li>
-                <li>
-                    <span><i class="ri-calendar-2-line"></i> Pazar</span>
-                    <span></span>
+                <li *ngFor="let workDate of workDates">
+                    <span><i class="ri-calendar-2-line"></i> {{workDate.day}}</span>
+                    <span>{{workDate.time}}</span>
                 </li>
             </ul>
         </div>
         <div class="info">
             <div class="headContent2">
                 <strong>İletişim Bilgileri</strong>
-                <h3>Dgm Bobinaj</h3>
+                <!-- <h3>Dgm Bobinaj</h3> -->
                 <p>Firmamızın İletişim Bilgileri</p>
             </div>
             <ul>
                 <li>
                     <span><i class="ri-user-line"></i> Yetkili Kişi</span>
                     <span>
-                        <strong>Soner Düğmeoğlu</strong>
+                        <strong>{{informationModel.name}}</strong>
                     </span>
                 </li>
                 <li>
                     <span><i class="ri-phone-line"></i> Telefon</span>
-                    <span><a href="">0555 555 55 55</a></span>
+                    <span><a href="tel:+90{{informationModel.phone}}">0{{informationModel.phone}}</a></span>
+                </li>
+                <li>
+                    <span><i class="ri-printer-line"></i> Fax</span>
+                    <span><a style="color: black;"
+                            href="tel:+90{{informationModel.fax}}">{{informationModel.fax}}</a></span>
                 </li>
                 <li>
                     <span><i class="ri-map-pin-line"></i> Adres</span>
-                    <span>Ferizli/Sakarya</span>
+                    <span><a style="color: black;"
+                            href="https://www.google.com/maps/search/?api=1&query=Ferizli+Sakarya"
+                            target="_blank">{{informationModel.address}}</a></span>
                 </li>
                 <li>
                     <span><i class="ri-mail-line"></i> E-Mail</span>
-                    <span>info&#64;dgmbobinaj.com</span>
+                    <span><a href="mailto:{{informationModel.email}}">{{informationModel.email}}</a></span>
                 </li>
             </ul>
         </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="section__container">
+    <div class="contactForm">
+        <div>
+            <div class="headContent2 tcenter">
+                <strong>BİZE ULAŞIN</strong>
+                <!-- <h5>Dgm Bobinaj</h5> -->
+                <p>Aşağıdaki iletişim formunu kullanarak bize mail gönderebilirsiniz.</p>
+            </div>
+
+            <div>
+                <div class="col-sm-12">
+                    <div class="alert alert-danger" role="alert" id="iletisimHatasi"
+                        style="display: none; margin-top: 10px">
+                        Lütfen tüm alanları doldurun </div>
+                </div>
+            </div>
+            <div>
+                <div class="col-12">
+                    <div class="alert alert-primary" role="alert" id="basarili" style="display: none; margin-top: 10px">
+                        Mesajınız başarılı bir şekilde gönderilmiştir.</div>
+                </div>
+            </div>
+
+            <div class="row" id="contactForm">
+                <div class="col-sm-6">
+                    <input [(ngModel)]="contactModel.name" required name="name" id="name" type="text"
+                        placeholder="Ad Soyad">
+                </div>
+                <div class="col-sm-6">
+                    <input [(ngModel)]="contactModel.email" required name="email" id="email" type="text"
+                        placeholder="Email">
+                </div>
+                <div class="col-sm-6">
+                    <input [(ngModel)]="contactModel.phone" required name="phone" id="phone" type="text"
+                        placeholder="Telefon">
+                </div>
+                <div class="col-sm-6">
+                    <input [(ngModel)]="contactModel.subject" required name="subject" id="subject" type="text"
+                        placeholder="Konu">
+                </div>
+                <div class="col-12">
+                    <textarea [(ngModel)]="contactModel.content" required name="content" id="content" rows="5"
+                        placeholder="Mesajınız.."></textarea>
+                    <button class="btn" type="submit" (click)="createContact()" id="mesajgonder">Mesajı Gönder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: end; margin-top: 50px;">
+        <a href="#"><button style="padding: 5px 10px 0px 10px;" class="btn"><span class="material-symbols-outlined">
+                    arrow_upward
+                </span></button></a>
     </div>
 </section>
