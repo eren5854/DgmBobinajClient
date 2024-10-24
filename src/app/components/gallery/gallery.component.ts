@@ -19,10 +19,11 @@ export class GalleryComponent implements AfterViewInit {
 
   images: ImageModel[] = [];
   galleries: ImageModel[] = [];
-  imgUrl = "https://localhost:7023/Images/";
+  imgUrl = "";
 
   constructor(private http: HttpService) {
     this.getImage();
+    this.imgUrl = http.imgUrl;
   }
 
   getImage() {

@@ -23,7 +23,7 @@ export class HomeComponent {
   isScreenSizeUnder768px = true;
   selectedCardIndex: number = 0;
 
-  imgUrl = "https://localhost:7023/Images/"
+  imgUrl = "";
 
   descriptions: DescriptionModel[] = [];
   about: DescriptionModel = new DescriptionModel();
@@ -53,6 +53,7 @@ export class HomeComponent {
     this.getInformation();
     this.getComment();
     this.checkWindowSize();
+    this.imgUrl = http.imgUrl;
   }
 
   selectCard(index: number) {

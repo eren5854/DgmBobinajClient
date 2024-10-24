@@ -20,13 +20,14 @@ export class LayoutComponent implements AfterViewInit {
   miniServices: MiniServiceModel[] = [];
   whatsappNumber = "";
 
-  imgUrl = "https://localhost:7023/Images/";
+  imgUrl = "";
 
   constructor(private http: HttpService) {
     this.getAllLayout();
     this.getLink();
     this.getMiniService();
     this.getInformation();
+    this.imgUrl = http.imgUrl;
   }
 
   ngAfterViewInit() {

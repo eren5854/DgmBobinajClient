@@ -6,8 +6,10 @@ import { SwalService } from './swal.service';
   providedIn: 'root'
 })
 export class HttpService {
+  imgUrl = "https://localhost:7023/Images/"
+  // imgUrl = ;
   url:string = "https://localhost:7023/api/";
-  // url:string = "https://marqex.webapi.marqexmarine.com/api/"
+  // url:string = "https://domain.com/api/"
   constructor(
     private http: HttpClient,
     private swal: SwalService
